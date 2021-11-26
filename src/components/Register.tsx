@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 import axios from "../axios";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import { isEmail, isEmpty } from "validator";
 const Register = () => {
   const history = useNavigate();
   const [email, setEmail] = useState<string>("");
@@ -18,6 +21,38 @@ const Register = () => {
       history("/login");
     } catch (error) {
       console.log(error);
+    }
+  };
+  const required = (value) => {
+    if (isEmpty(value)) {
+      return (
+        <small className="form-text text-danger">This field is required</small>
+      );
+    }
+  };
+  const validEmail = (value) => {
+    if (!isEmail(value)) {
+      return (
+        <small className="form-text text-danger">Invalid email format</small>
+      );
+    }
+  };
+  const validUser = (value) => {
+    if (value.trim().length < 4) {
+      return (
+        <small className="form-text text-danger">
+          Username should be at least 4 characters long
+        </small>
+      );
+    }
+  };
+  const minLength = (value) => {
+    if (value.trim().length < 6) {
+      return (
+        <small className="form-text text-danger">
+          Password must be at least 6 characters long
+        </small>
+      );
     }
   };
   return (
@@ -37,30 +72,33 @@ const Register = () => {
         </div>
       </div>
       <div className="container">
-        <form>
+        <Form>
           <h1>Register</h1>
-          <input
+          <Input
             type="email"
             placeholder="Email or phone number"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: any) => setEmail(e.target.value)}
+            validations ={[required, validEmail]}
           />
-          <input
+          <Input
             type="username"
             placeholder="Username"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e: any) => setUsername(e.target.value)}
+            validations ={[required, validUser]}
           />
-          <input
+          <Input
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e: any) => setPassword(e.target.value)}
+            validations ={[required, minLength]}
           />
           <button className="loginButton" onClick={handleSubmit}>
             Register
           </button>
-        </form>
+        </Form>
       </div>
     </div>
   );
