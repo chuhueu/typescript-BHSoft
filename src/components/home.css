@@ -1,0 +1,119 @@
+.featured {
+  height: 100vh;
+  color: white;
+  position: relative;
+  object-fit: contain;
+}
+.nav img {
+  width: 14%;
+  padding: 50px;
+}
+.buttonLogin {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: #e50519;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.banner_title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+.info {
+  width: 35%;
+  position: absolute;
+  left: 50px;
+  bottom: 150px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.desc {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 0px;
+}
+.desc button {
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  border-color: transparent;
+  color: hsl(209, 23%, 60%);
+  margin-left: -5px;
+}
+.buttons {
+  display: flex;
+}
+.buttons button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.more {
+  font-family: "Netflix Sans";
+  background-color: gray;
+  color: white;
+}
+
+.modal {
+  font-family: Netflix Sans;
+  font-size: 12px;
+  width: 100%;
+}
+.modal > .header {
+  width: 100%;
+  font-size: 23px;
+  text-align: center;
+  padding: 5px 0px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 20px 0px 10px 0px;
+  font-size: 18px;
+  text-align: center;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 15px 0px;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: none;
+}
+.modal > .close:hover {
+  color: #e40519;
+}
+
+.modal > .actions .button {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 23px;
+  padding: 7px 12px;
+  background: #e40915;
+  color: #fff;
+  border-radius: 5px;
+}

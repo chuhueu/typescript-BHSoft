@@ -1,0 +1,68 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("http://mppmduse2pmpovwapp.azurewebsites.net/wp-content/uploads/2019/09/netflix-background-9.jpg");
+  background-size: cover;
+  position: relative;
+}
+.logo {
+  width: 15%;
+  padding: 50px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.container form {
+  margin-top: 30px;
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #131313;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container form input {
+  height: 40px;
+  border-radius: 5px;
+  background-color: gray;
+  color: white;
+  padding-left: 10px;
+}
+.container form input::placeholder {
+  color: lightgray;
+}
+.loginButton {
+  height: 40px;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.buttonLogin {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: #e50519;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
