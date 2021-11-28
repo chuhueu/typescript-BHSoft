@@ -38,4 +38,13 @@ router.get("/", async (req, res) => {
     res.status(500).json(error);
   }
 });
+//DELETE
+router.delete("/:id", async (req, res) => { //:id route parameters
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.status(200).json("the movie has been deleted...!");
+  } catch (error) {
+    res.status(500).json(error);
+  }
+})
 module.exports = router;
