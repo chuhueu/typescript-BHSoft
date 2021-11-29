@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const { error } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     dispatch(login({ email, password }));
     //console.log(user);
@@ -62,7 +62,7 @@ const Login = () => {
             placeholder="Email or phone number"
             value={email}
             className="form-control"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: React.MouseEvent<HTMLElement>) => setEmail((e.target as any).value)}
             validations ={[required, formEmail]}
           />
           <Input
@@ -70,7 +70,7 @@ const Login = () => {
             placeholder="Password"
             value={password}
             className="form-control"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e: React.MouseEvent<HTMLElement>) => setPassword((e.target as any).value)}
             validations={[required, minLength]}
           />
           <button className="loginButton" onClick={handleSubmit}>
