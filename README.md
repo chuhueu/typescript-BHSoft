@@ -1,4 +1,4 @@
-# sign up, sign in, log out
+# sign up, sign in, log out, validation form 
 
 -deploy server: https://login-bhsoft.herokuapp.com/
 
