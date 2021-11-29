@@ -10,7 +10,7 @@ const Register = () => {
   const [email, setEmail] = useState<string>("");
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     try {
       await axios.post("/auth/register", {
@@ -78,21 +78,21 @@ const Register = () => {
             type="email"
             placeholder="Email or phone number"
             value={email}
-            onChange={(e: any) => setEmail(e.target.value)}
+            onChange={(e: React.MouseEvent<HTMLElement>) => setEmail((e.target as any).value)}
             validations ={[required, validEmail]}
           />
           <Input
             type="username"
             placeholder="Username"
             value={username}
-            onChange={(e: any) => setUsername(e.target.value)}
+            onChange={(e: React.MouseEvent<HTMLElement>) => setUsername((e.target as any).value)}
             validations ={[required, validUser]}
           />
           <Input
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e: any) => setPassword(e.target.value)}
+            onChange={(e: React.MouseEvent<HTMLElement>) => setPassword((e.target as any).value)}
             validations ={[required, minLength]}
           />
           <button className="loginButton" onClick={handleSubmit}>
