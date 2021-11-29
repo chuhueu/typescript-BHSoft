@@ -1,4 +1,4 @@
-# login app using typescrip, redux, redux-thunk, react-router, axios
+# sign up, sign in, log out, validation form 
 
 -deploy server: https://login-bhsoft.herokuapp.com/
 
