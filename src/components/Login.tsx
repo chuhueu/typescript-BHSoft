@@ -17,14 +17,14 @@ const Login = () => {
     dispatch(login({ email, password }));
     //console.log(user);
   };
-  const required = (value) => {
+  const required = (value: string) => {
     if (isEmpty(value)) {
       return (
         <small className="form-text text-danger">This field is required</small>
       );
     }
   };
-  const formEmail = (value) => {
+  const formEmail = (value: string) => {
     if (!isEmail(value)) {
       return (
         <small className="form-text text-danger">Invalid email format</small>
@@ -32,7 +32,7 @@ const Login = () => {
     }
   };
 
-  const minLength = (value) => {
+  const minLength = (value: string) => {
     if (value.trim().length < 6) {
       return (
         <small className="form-text text-danger">
@@ -65,9 +65,9 @@ const Login = () => {
             placeholder="Email or phone number"
             value={email}
             className="form-control"
-            onChange={(e: React.ChangeEvent<HTMLElement>) =>
-              setEmail((e.target as any).value)
-            }
+            onChange={(e: React.ChangeEvent<HTMLElement>) =>{
+              setEmail((e.target as any).value);
+            }}
             validations={[required, formEmail]}
           />
           <Input
@@ -75,9 +75,9 @@ const Login = () => {
             placeholder="Password"
             value={password}
             className="form-control"
-            onChange={(e: React.ChangeEvent<HTMLElement>) =>
-              setPassword((e.target as any).value)
-            }
+            onChange={(e: React.ChangeEvent<HTMLElement>) =>{
+              setPassword((e.target as any).value);
+            }}
             validations={[required, minLength]}
           />
           <button className="loginButton" onClick={handleSubmit}>
