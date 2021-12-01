@@ -12,7 +12,7 @@ interface userSate {
 }
 
 const initialState: userSate = {
-  userInfo: JSON.parse(localStorage.getItem("user") || "{}") || null,
+  userInfo: JSON.parse(localStorage.getItem("user") || "") || null,
   isFetching: true,
   error: false,
 };
