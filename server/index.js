@@ -7,10 +7,9 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 app.use(cors());
-const URL =
-  "mongodb+srv://testBoy:hieu123@cluster0.qhhal.mongodb.net/login-BHSoft?retryWrites=true&w=majority";
+MONGO_URL = "mongodb+srv://testBoy:hieu123@cluster0.qhhal.mongodb.net/login-BHSoft?retryWrites=true&w=majority";
 mongoose
-  .connect(URL, {
+  .connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -21,8 +20,8 @@ mongoose
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.get("/", (req, res) => {
-  res.send("APP IS RUNNING");
+  res.send("APP IS RUNNINGG");
 });
-app.listen(process.env.PORT || 8800, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log("Backend server is running!");
 });

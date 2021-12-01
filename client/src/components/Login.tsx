@@ -44,6 +44,9 @@ const Login = () => {
   return (
     <div className="login">
       <div className="top">
+      <Link to="/register">
+          <button className="buttonLogin">Register</button>
+        </Link>
         <div className="wrapper">
           <Link to="/register">
             <img
@@ -54,15 +57,15 @@ const Login = () => {
           </Link>
         </div>
       </div>
-      <div className="container">
-        <Form>
+      <div className="container-login">
+        <Form className="form-login">
           <h1>Log in</h1>
           <Input
             type="email"
             placeholder="Email or phone number"
             value={email}
             className="form-control"
-            onChange={(e: React.MouseEvent<HTMLElement>) => setEmail((e.target as any).value)}
+            onChange={(e: React.ChangeEvent<HTMLElement>) => setEmail((e.target as any).value)}
             validations ={[required, formEmail]}
           />
           <Input
@@ -70,7 +73,7 @@ const Login = () => {
             placeholder="Password"
             value={password}
             className="form-control"
-            onChange={(e: React.MouseEvent<HTMLElement>) => setPassword((e.target as any).value)}
+            onChange={(e: React.ChangeEvent<HTMLElement>) => setPassword((e.target as any).value)}
             validations={[required, minLength]}
           />
           <button className="loginButton" onClick={handleSubmit}>
