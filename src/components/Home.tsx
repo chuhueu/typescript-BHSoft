@@ -8,10 +8,12 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 const Home = () => {
-    const [readMore, setReadMore] = useState(false);
+  const [readMore, setReadMore] = useState(false);
+  // const user = JSON.parse(localStorage.getItem("user") || "{}");
   const user = JSON.parse(localStorage.getItem("user") || "");
   const dispatch = useAppDispatch();
-  const des = "Tony Stark creates the Ultron Program to protect the world, but when the peacekeeping program becomes hostile, The Avengers go into action to try and defeat a virtually impossible enemy together. Earth's mightiest heroes must come together once again to protect the world from global extinction.";
+  const des =
+    "Tony Stark creates the Ultron Program to protect the world, but when the peacekeeping program becomes hostile, The Avengers go into action to try and defeat a virtually impossible enemy together. Earth's mightiest heroes must come together once again to protect the world from global extinction.";
   const truncate = (string: string, n: number) => {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   };
@@ -42,7 +44,7 @@ const Home = () => {
       <div className="info">
         <h1 className="banner_title">Age of Ultron</h1>
         <span className="desc">
-          {readMore ? des : truncate(des , 150)}
+          {readMore ? des : truncate(des, 150)}
           <button onClick={() => setReadMore(!readMore)}>
             {readMore ? "show less" : "read more"}
           </button>
@@ -68,7 +70,7 @@ const Home = () => {
                   </button>
                   <div className="header">Oops!</div>
                   <div className="content">
-                  You are not logged in. Please login to use this feature
+                    You are not logged in. Please login to use this feature
                   </div>
                   <div className="actions">
                     <Link to="/register" className="button">

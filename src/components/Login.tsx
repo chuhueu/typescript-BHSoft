@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const { error } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     dispatch(login({ email, password }));
     //console.log(user);
@@ -44,6 +44,9 @@ const Login = () => {
   return (
     <div className="login">
       <div className="top">
+        <Link to="/register">
+          <button className="buttonLogin">Register</button>
+        </Link>
         <div className="wrapper">
           <Link to="/register">
             <img
@@ -54,33 +57,33 @@ const Login = () => {
           </Link>
         </div>
       </div>
-      <div className="container">
-        <Form>
+      <div className="container-login">
+        <Form className="form-login">
           <h1>Log in</h1>
           <Input
             type="email"
             placeholder="Email or phone number"
             value={email}
             className="form-control"
-            onChange={(e) => setEmail(e.target.value)}
-            validations ={[required, formEmail]}
+            onChange={(e: React.ChangeEvent<HTMLElement>) =>
+              setEmail((e.target as any).value)
+            }
+            validations={[required, formEmail]}
           />
           <Input
             type="password"
             placeholder="Password"
             value={password}
             className="form-control"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLElement>) =>
+              setPassword((e.target as any).value)
+            }
             validations={[required, minLength]}
           />
           <button className="loginButton" onClick={handleSubmit}>
             Log in
           </button>
-          {error && (
-            <span id="error">
-              Wrong email or password!
-            </span>
-          )}
+          {error && <span id="error">Wrong email or password!</span>}
         </Form>
       </div>
     </div>
